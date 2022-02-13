@@ -1,0 +1,14 @@
+parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcelRequire,u="function"==typeof require&&require;function f(t,n){if(!r[t]){if(!e[t]){var i="function"==typeof parcelRequire&&parcelRequire;if(!n&&i)return i(t,!0);if(o)return o(t,!0);if(u&&"string"==typeof t)return u(t);var c=new Error("Cannot find module '"+t+"'");throw c.code="MODULE_NOT_FOUND",c}p.resolve=function(r){return e[t][1][r]||r},p.cache={};var l=r[t]=new f.Module(t);e[t][0].call(l.exports,p,l,l.exports,this)}return r[t].exports;function p(e){return f(p.resolve(e))}}f.isParcelRequire=!0,f.Module=function(e){this.id=e,this.bundle=f,this.exports={}},f.modules=e,f.cache=r,f.parent=o,f.register=function(r,t){e[r]=[function(e,r){r.exports=t},{}]};for(var c=0;c<t.length;c++)try{f(t[c])}catch(e){i||(i=e)}if(t.length){var l=f(t[t.length-1]);"object"==typeof exports&&"undefined"!=typeof module?module.exports=l:"function"==typeof define&&define.amd?define(function(){return l}):n&&(this[n]=l)}if(parcelRequire=f,i)throw i;return f}({"clu1":[function(require,module,exports) {
+
+},{}],"qJUB":[function(require,module,exports) {
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.refs=void 0;const e={tempDegree:document.querySelector(".temperature-degree"),body:document.querySelector("body"),tempDescr:document.querySelector(".temperature-description"),icon:document.querySelector(".icon"),locationCity:document.querySelector(".location-timezone")};exports.refs=e;
+},{}],"AZzu":[function(require,module,exports) {
+"use strict";function e(e,t){return fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${t}&lon=${e}&appid=7ebcf861e909a4853a0d8e23d058e7cf&units=metric&lang=en`).then(e=>{if(!e.ok)throw new Error(e.status);return e.json()})}Object.defineProperty(exports,"__esModule",{value:!0}),exports.fetchWeather=e;
+},{}],"EJR9":[function(require,module,exports) {
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.renderWeather=t;var e=require("./getRefs");function t({main:t,name:r,weather:n}){console.log(...n),e.refs.tempDegree.textContent=Math.round(t.temp),e.refs.locationCity.textContent=r,e.refs.tempDescr.textContent=n[0].description,e.refs.icon.src=`https://openweathermap.org/img/wn/${n[0].icon}@2x.png`}
+},{"./getRefs":"qJUB"}],"bs49":[function(require,module,exports) {
+"use strict";var e=require("./getRefs"),o=require("./weather"),r=require("./renderWeather");navigator.geolocation&&navigator.geolocation.getCurrentPosition(e=>{const t=e.coords.longitude;console.log("long",t);const n=e.coords.latitude;console.log("lat",n),(0,o.fetchWeather)(t,n).then(r.renderWeather).catch(console.error)});
+},{"./getRefs":"qJUB","./weather":"AZzu","./renderWeather":"EJR9"}],"Focm":[function(require,module,exports) {
+"use strict";require("./sass/main.scss"),require("./js/getLocation");
+},{"./sass/main.scss":"clu1","./js/getLocation":"bs49"}]},{},["Focm"], null)
+//# sourceMappingURL=/weather/src.6e93bf51.js.map
