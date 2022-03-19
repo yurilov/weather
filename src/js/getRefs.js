@@ -4,4 +4,6 @@ export const refs = {
   tempDescr: document.querySelector('.temperature-description'),
   icon: document.querySelector('.icon'),
   locationCity: document.querySelector('.location-timezone'),
+  searchQRef: document.querySelector('[name="searchQuery"]'),
+  submitBtnRef: document.querySelector('.btnWeather'),
 };
