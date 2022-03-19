@@ -6,4 +6,5 @@ export const refs = {
   locationCity: document.querySelector('.location-timezone'),
   searchQRef: document.querySelector('[name="searchQuery"]'),
   submitBtnRef: document.querySelector('.btnWeather'),
+  skyIcon: document.querySelector('#icon1'),
 };
